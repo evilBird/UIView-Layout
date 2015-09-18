@@ -70,6 +70,27 @@
     return constraint;
 }
 
+- (NSLayoutConstraint *)alignEdge:(LayoutEdge)edge1 toEdge:(LayoutEdge)edge2 ofView:(UIView *)view offset:(CGFloat)offset
+{
+    if (!view) {
+        return nil;
+    }
+    
+    NSLayoutAttribute attr1 = [UIView edgeAttribute:edge1];
+    NSLayoutAttribute attr2 = [UIView edgeAttribute:edge2];
+    
+    NSLayoutConstraint *constraint = nil;
+    constraint = [NSLayoutConstraint constraintWithItem:self
+                                              attribute:attr1
+                                              relatedBy:NSLayoutRelationEqual
+                                                 toItem:view
+                                              attribute:attr2
+                                             multiplier:1.0
+                                               constant:offset];
+    
+    return constraint;
+}
+
 - (NSLayoutConstraint *)pinHeight:(CGFloat)height
 {
     NSLayoutConstraint *constraint = nil;

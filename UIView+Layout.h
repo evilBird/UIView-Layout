@@ -30,6 +30,8 @@ typedef NS_ENUM(NSInteger, LayoutAxis)
 
 - (NSLayoutConstraint *)alignAxis:(LayoutAxis)axis1 toAxis:(LayoutAxis)axis2 ofView:(UIView *)view offset:(CGFloat)offset;
 
+- (NSLayoutConstraint *)alignEdge:(LayoutEdge)edge1 toEdge:(LayoutEdge)edge2 ofView:(UIView *)view offset:(CGFloat)offset;
+
 - (NSLayoutConstraint *)pinWidthEqualToHeight;
 
 - (NSLayoutConstraint *)pinHeight:(CGFloat)height;
