@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/evilBird/UIView-Layout.git",
-    "tag": "0.1.0"
+    "branch": "master"
   },
   "platforms": {
     "ios": "7.0"
