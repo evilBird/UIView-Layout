@@ -1,0 +1,20 @@
+{
+  "name": "UIView+Layout",
+  "version": "0.1.0",
+  "summary": "UIView category supports use of programmatic Autolayout constraints",
+  "homepage": "https://github.com/evilBird/UIView-Layout",
+  "license": "MIT",
+  "authors": {
+    "evilBird": "developer@birdsoundmusic.com"
+  },
+  "source": {
+    "git": "https://github.com/evilBird/UIView-Layout.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": "*.{h,m}",
+  "frameworks": "UIKit",
+  "requires_arc": true
+}
