@@ -50,6 +50,8 @@ typedef NS_ENUM(NSInteger, LayoutAxis)
 
 - (NSLayoutConstraint *)pinHeightInProportion:(CGFloat)proportion toHeightOfView:(UIView *)view;
 
+- (NSArray *)pinHeightMin:(CGFloat)minHeight max:(CGFloat)maxHeight preferred:(CGFloat)preferredHeight;
+
 - (NSLayoutConstraint *)pinWidthEqualToView:(UIView *)view;
 
 - (NSLayoutConstraint *)pinHeightEqualToView:(UIView *)view;

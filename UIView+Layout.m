@@ -277,6 +277,47 @@
     return constraint;
 }
 
+- (NSArray *)pinHeightMin:(CGFloat)minHeight max:(CGFloat)maxHeight preferred:(CGFloat)preferredHeight
+{
+    NSMutableArray *constraints = [NSMutableArray array];
+    NSLayoutConstraint *constraint = [NSLayoutConstraint
+                                      constraintWithItem:self
+                                      attribute:NSLayoutAttributeHeight
+                                      relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                      toItem:nil
+                                      attribute:NSLayoutAttributeNotAnAttribute
+                                      multiplier:0.0
+                                      constant:minHeight];
+    constraint.priority = 1000;
+    [constraints addObject:constraint];
+    
+    constraint = [NSLayoutConstraint
+                  constraintWithItem:self
+                  attribute:NSLayoutAttributeHeight
+                  relatedBy:NSLayoutRelationLessThanOrEqual
+                  toItem:nil
+                  attribute:NSLayoutAttributeNotAnAttribute
+                  multiplier:0.0
+                  constant:maxHeight];
+    
+    constraint.priority = 1000;
+    [constraints addObject:constraint];
+    
+    constraint = [NSLayoutConstraint
+                  constraintWithItem:self
+                  attribute:NSLayoutAttributeHeight
+                  relatedBy:NSLayoutRelationEqual
+                  toItem:nil
+                  attribute:NSLayoutAttributeNotAnAttribute
+                  multiplier:0.0
+                  constant:preferredHeight];
+    constraint.priority = 999;
+    [constraints addObject:constraint];
+    
+    
+    return constraints;
+}
+
 - (NSLayoutConstraint *)pinEdge:(LayoutEdge)edge toSuperviewEdge:(LayoutEdge)superviewEdge
 {
     NSLayoutConstraint *constraint = nil;
